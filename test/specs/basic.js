@@ -29,4 +29,11 @@ describe('Skoda-Auto homepage', () => {
     browser.switchToParentFrame();
     expect(cookie_iframe.isExisting()).to.be.false;
   });
+
+  it('dataLayer should be present', () => {
+    var _dataLayer = browser.execute(() => {
+      return window.dataLayer;
+    });
+    expect(_dataLayer).is.not.empty;
+  });
 });
