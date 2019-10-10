@@ -3,6 +3,11 @@ var expect = require('chai').expect;
 describe('Skoda-Auto homepage', () => {
   before(function () {
     browser.url('https://www.skoda-auto.cz');
+    browser.maximizeWindow();
+  });
+
+  after(function () {
+    browser.closeWindow();
   });
 
   it('should have the right title', () => {
@@ -14,5 +19,14 @@ describe('Skoda-Auto homepage', () => {
     var cookie_iframe = $('//iframe[@scrolling="no"]');
     cookie_iframe.waitForExist(5000);
     expect(cookie_iframe.isExisting()).to.be.true;
+  });
+
+  it('cookie popup should not be visible after accepting', () => {
+    var cookie_iframe = $('//iframe[@scrolling="no"]');
+    var cookie_accept = $('//input[@value="Souhlasím"]');
+    browser.switchToFrame(cookie_iframe);
+    cookie_accept.click();
+    browser.switchToParentFrame();
+    expect(cookie_iframe.isExisting()).to.be.false;
   });
 });
