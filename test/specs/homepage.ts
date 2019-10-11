@@ -1,5 +1,6 @@
 var expect = require('chai').expect;
-var HomePage = require('./test/pageobjects/home.page').Page;
+var HomePage = require('../pageobjects/homepage');
+
 
 describe('Homepage tests', () => {
     it('datalayer is present', () => {
