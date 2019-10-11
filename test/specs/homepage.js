@@ -1,10 +1,13 @@
 var expect = require('chai').expect
-import HomePage from '../pageobjects/home.page'
+var HomePage = require('../pageobjects/home.page.mjs')
 
 describe('Homepage tests', () => {
     it('datalayer is present', () => {
-        HomePage.open()
+        HomePage.open()        
+        HomePage.switch_to_cookie_frame()
         HomePage.accept_cookies()
+        HomePage.switch_back_from_iframe()
+        
         expect(HomePage.datalayer).is.not.empty
     })
 })
