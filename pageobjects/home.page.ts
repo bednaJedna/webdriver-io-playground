@@ -1,5 +1,4 @@
-import Page from './page';
-
+var Page = require('./page').Page;
 class HomePage extends Page {
 
     get cookie_iframe() {

@@ -1,5 +1,5 @@
-import { expect } from 'chai';
-import HomePage from '../pageobjects/home.page';
+var expect = require('chai').expect;
+var HomePage = require('../../pageobjects/home.page').Page;
 
 describe('Homepage tests', () => {
     it('datalayer is present', () => {
