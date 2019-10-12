@@ -1,6 +1,6 @@
-var Activities = require('../dataobjects/activities.mjs').default
+var activities = require('../dataobjects/activities.json')
 
-class DataLayer extends Activities {
+class DataLayer {
 
     get datalayer() {
         return browser.execute(() => {
@@ -26,8 +26,7 @@ class DataLayer extends Activities {
     verify_activity(matrixId) {
         var status = true
         const dl = this.datalayer.reverse()
-        const definitions = new Activities()
-        const props = definitions['activities'][matrixId]
+        const props = activities[matrixId]
 
         for (var activity of dl) {
             if (activity.matrixId != matrixId) {
