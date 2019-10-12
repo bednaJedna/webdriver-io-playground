@@ -20,7 +20,7 @@ describe('Homepage tests', () => {
     })
 
     it('activity with matrixId=1 has all properties', () => {
-        //pass
+        expect(DataLayer.verify_activity("1")).to.be.true
     })
 
 })

@@ -1,6 +1,6 @@
 module.exports.default = class Activities {
     constructor() {
-        this.activities = new Array({
+        this.activities = {
             "1": ["matrixId",
                 "page.Context",
                 "event",
@@ -13,6 +13,6 @@ module.exports.default = class Activities {
                 "page.Orientation",
                 "gtm.uniqueEventId"
             ]
-        })
+        }
     }
 }
