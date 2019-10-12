@@ -18,5 +18,4 @@ describe('Homepage tests', () => {
     it('datalayer has matrixId=1 activity', () => {
         expect(DataLayer.find_activity('1')).to.be.true
     })
-
 })

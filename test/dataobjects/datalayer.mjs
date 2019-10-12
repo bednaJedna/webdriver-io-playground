@@ -1,4 +1,6 @@
-class DataLayer {
+var Activites = require('../dataobjects/activities.mjs').default
+
+class DataLayer extends Activites {
     
     get datalayer() {
         return browser.execute(() => {
@@ -9,14 +11,18 @@ class DataLayer {
     find_activity(matrixId) {
         var status = false
 
-        this.datalayer.reverse().forEach(function (activity) {
+        for (var activity of this.datalayer) {
             if (activity.matrixId == matrixId) {
-                return status = true
-            } 
-        })
-
+                status = true
+                break
+            } else {
+                continue
+            }
+        }
+        
         return status
     }
+
 }
 
 module.exports = new DataLayer()
