@@ -16,6 +16,11 @@ describe('Homepage tests', () => {
     })
 
     it('datalayer has matrixId=1 activity', () => {
-        expect(DataLayer.find_activity('1')).to.be.true
+        expect(DataLayer.check_activity_for_presence('1')).to.be.true
     })
+
+    it('activity with matrixId=1 has all properties', () => {
+        //pass
+    })
+
 })

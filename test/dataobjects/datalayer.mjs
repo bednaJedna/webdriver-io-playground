@@ -1,14 +1,14 @@
 var Activites = require('../dataobjects/activities.mjs').default
 
 class DataLayer extends Activites {
-    
+
     get datalayer() {
         return browser.execute(() => {
             return window.dataLayer
         })
     }
 
-    find_activity(matrixId) {
+    check_activity_for_presence(matrixId) {
         var status = false
 
         for (var activity of this.datalayer) {
@@ -19,10 +19,9 @@ class DataLayer extends Activites {
                 continue
             }
         }
-        
+
         return status
     }
-
 }
 
 module.exports = new DataLayer()
