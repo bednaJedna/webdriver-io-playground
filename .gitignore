@@ -1,6 +1,7 @@
 node_modules
 .vscode
 allure-results
+allure-report
 .eslintrc.js
 package-lock.json
 package.json
