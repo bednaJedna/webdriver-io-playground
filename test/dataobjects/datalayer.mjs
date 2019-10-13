@@ -24,7 +24,7 @@ class DataLayer {
     }
 
     verify_activity(matrixId) {
-        var status = true
+        var status = false
         const dl = this.datalayer.reverse()
         const props = activities[matrixId]
 
@@ -32,6 +32,7 @@ class DataLayer {
             if (activity.matrixId != matrixId) {
                 continue
             } else {
+                status = true
                 for (var prop of Object.keys(activity)) {
                     if (props.includes(prop)) {
                         continue
