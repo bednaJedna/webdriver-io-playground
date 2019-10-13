@@ -20,9 +20,9 @@ class DataLayer {
         return false
     }
 
-    verify_activity_props(matrixId) {
+    verify_activity_props(matrixId, page) {
         const dl = this.datalayer.reverse()
-        const props = Object.keys(activities[matrixId])
+        const props = Object.keys(activities[matrixId][page])
 
         for (var activity of dl) {
             if (activity.matrixId != matrixId) {
@@ -41,9 +41,9 @@ class DataLayer {
         return true
     }
 
-    verify_activity_values(matrixId) {
+    verify_activity_values(matrixId, page) {
         const dl = this.datalayer.reverse()
-        const values = Object.values(activities[matrixId])
+        const values = Object.values(activities[matrixId][page])
 
         for (var activity of dl) {
             if (activity.matrixId != matrixId) {

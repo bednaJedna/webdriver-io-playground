@@ -1,14 +1,16 @@
 {
     "1": {
-        "dealer.DealerID": "undefined",
-        "event": "pageview_copied",
-        "importer.BID": "260",
-        "matrixId": "1",
-        "page.Context": "Importer",
-        "page.Group": "Website",
-        "page.LanguageVersion": "cs-cz",
-        "page.Name": "ŠKODA AUTO Česká republika | Oficiální web‎ ŠKODA AUTO a.s.",
-        "page.Orientation": "Landscape",
-        "page.ResponsiveLayout": "Desktop"
+        "homepage": {
+            "dealer.DealerID": "undefined",
+            "event": "pageview_copied",
+            "importer.BID": "260",
+            "matrixId": "1",
+            "page.Context": "Importer",
+            "page.Group": "Website",
+            "page.LanguageVersion": "cs-cz",
+            "page.Name": "ŠKODA AUTO Česká republika | Oficiální web‎ ŠKODA AUTO a.s.",
+            "page.Orientation": "Landscape",
+            "page.ResponsiveLayout": "Desktop"
+        }
     }
 }
