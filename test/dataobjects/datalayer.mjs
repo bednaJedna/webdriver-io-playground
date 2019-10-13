@@ -9,41 +9,59 @@ class DataLayer {
     }
 
     check_activity_for_presence(matrixId) {
-        var status = false
-
         for (var activity of this.datalayer.reverse()) {
             if (activity.matrixId == matrixId) {
-                status = true
-                break
+                return true
             } else {
                 continue
             }
         }
 
-        return status
+        return false
     }
 
-    verify_activity(matrixId) {
-        var status = false
+    verify_activity_props(matrixId) {
         const dl = this.datalayer.reverse()
-        const props = activities[matrixId]
+        const props = Object.keys(activities[matrixId])
 
         for (var activity of dl) {
             if (activity.matrixId != matrixId) {
                 continue
             } else {
-                status = true
-                for (var prop of Object.keys(activity)) {
-                    if (props.includes(prop)) {
+                for (var prop of props) {
+                    if (Object.keys(activity).includes(prop)) {
                         continue
                     } else {
-                        status = false
-                        break
+                        return false
                     }
                 }
             }
+            break
         }
-        return status
+        return true
+    }
+
+    verify_activity_values(matrixId) {
+        const dl = this.datalayer.reverse()
+        const values = Object.values(activities[matrixId])
+
+        for (var activity of dl) {
+            if (activity.matrixId != matrixId) {
+                continue
+            } else {
+                for (var value of values) {
+                    if (Object.values(activity).includes(value)) {
+                        continue
+                    } else {
+                        return false
+                    }
+                }
+            }
+            break
+
+        }
+        
+        return true
     }
 }
 
