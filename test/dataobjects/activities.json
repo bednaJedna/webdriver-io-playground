@@ -12,5 +12,23 @@
             "page.Orientation": "Landscape",
             "page.ResponsiveLayout": "Desktop"
         }
+    },
+    "2": {
+        "kamiq": {
+            "car.Carline": "64000",
+            "car.Model": "NWKamiq",
+            "car.ModelBody": "NW5",
+            "dealer.DealerID": "undefined",
+            "event": "pageview",
+            "importer.BID": "260",
+            "matrixId": "22",
+            "page.Context": "Importer",
+            "page.Group": "Website",
+            "page.LanguageVersion": "cs-cz",
+            "page.Name": "ŠKODA KAMIQ | ŠKODA AUTO a.s.",
+            "page.Orientation": "Landscape",
+            "page.ResponsiveLayout": "Desktop",
+            "web.ModelDetailViews": "1"
+        }
     }
 }

@@ -10,6 +10,10 @@ class HomePage extends Page {
         return $('//input[@value="Souhlasím"]')
     }
 
+    get explore_bttn() {
+        return $$('//a[@class="btn btn-sa-primary"]')[3]
+    }
+
     get datalayer() {
         return browser.execute(() => {
             return window.dataLayer
@@ -30,6 +34,11 @@ class HomePage extends Page {
 
     switch_back_from_iframe() {
         super.switch_to_page()
+    }
+
+    click_explore_bttn() {
+        this.cookie_accept_button.waitForExist(5000)
+        this.cookie_accept_button.click()
     }
 }
 
