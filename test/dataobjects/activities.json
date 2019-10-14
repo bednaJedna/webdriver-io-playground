@@ -2,7 +2,7 @@
     "1": {
         "homepage": {
             "dealer.DealerID": "undefined",
-            "event": "pageview_copied",
+            "event": "pageview",
             "importer.BID": "260",
             "matrixId": "1",
             "page.Context": "Importer",

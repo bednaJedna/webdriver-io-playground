@@ -4,8 +4,8 @@ var DataLayer = require('../dataobjects/datalayer.mjs')
 
 describe('Homepage tests', () => {
 
-    before(function() {
-        HomePage.open()        
+    before(function () {
+        HomePage.open()
         HomePage.switch_to_cookie_frame()
         HomePage.accept_cookies()
         HomePage.switch_back_from_iframe()
@@ -20,10 +20,18 @@ describe('Homepage tests', () => {
     })
 
     it('activity with matrixId=1 has all properties', () => {
-        expect(DataLayer.verify_activity_props("1", "homepage")).to.be.true
+        expect(DataLayer.verify_activity({
+            matrixId: "1",
+            page: "homepage",
+            to_check: "props"
+        })).to.be.true
     })
 
     it('activity with matrixId=1 has all correct values', () => {
-        expect(DataLayer.verify_activity_values("1", "homepage")).to.be.true
+        expect(DataLayer.verify_activity({
+            matrixId: "1",
+            page: "homepage",
+            to_check: "values"
+        })).to.be.true
     })
 })

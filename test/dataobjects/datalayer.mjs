@@ -20,18 +20,36 @@ class DataLayer {
         return false
     }
 
-    verify_activity_props(matrixId, page) {
+    verify_activity({
+        matrixId = null,
+        page = null,
+        to_check = null
+    }) {
         const dl = this.datalayer.reverse()
-        const props = Object.keys(activities[matrixId][page])
+        var items = null
+        var dl_items = null
+
+        if (to_check == 'props') {
+            items = Object.keys(activities[matrixId][page])
+        } else {
+            items = Object.values(activities[matrixId][page])
+        }
 
         for (var activity of dl) {
             if (activity.matrixId != matrixId) {
                 continue
             } else {
-                for (var prop of props) {
-                    if (Object.keys(activity).includes(prop)) {
+                if (to_check == 'props') {
+                    dl_items = Object.keys(activity)
+                } else {
+                    dl_items = Object.values(activity)
+                }
+
+                for (var item of items) {
+                    if (dl_items.includes(item)) {
                         continue
                     } else {
+                        console.log(item)
                         return false
                     }
                 }
@@ -41,28 +59,6 @@ class DataLayer {
         return true
     }
 
-    verify_activity_values(matrixId, page) {
-        const dl = this.datalayer.reverse()
-        const values = Object.values(activities[matrixId][page])
-
-        for (var activity of dl) {
-            if (activity.matrixId != matrixId) {
-                continue
-            } else {
-                for (var value of values) {
-                    if (Object.values(activity).includes(value)) {
-                        continue
-                    } else {
-                        return false
-                    }
-                }
-            }
-            break
-
-        }
-        
-        return true
-    }
 }
 
 module.exports = new DataLayer()
