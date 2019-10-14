@@ -11,7 +11,7 @@ class HomePage extends Page {
     }
 
     get explore_bttn() {
-        return $$('//a[@class="btn btn-sa-primary"]')[3]
+        return $('//*[@id="HomeBannerModule-b345644c"]/div/div[5]/div/div[1]/div/div/div[2]/div[2]/div/a')
     }
 
     get datalayer() {
@@ -29,16 +29,20 @@ class HomePage extends Page {
     }
 
     switch_to_cookie_frame() {
-        super.switch_to_frame(this.cookie_iframe)
+        browser.switchToFrame(this.cookie_iframe)
     }
 
     switch_back_from_iframe() {
-        super.switch_to_page()
+        browser.switchToParentFrame()
     }
 
     click_explore_bttn() {
-        this.cookie_accept_button.waitForExist(5000)
-        this.cookie_accept_button.click()
+        this.explore_bttn.waitForExist(5000)
+        this.explore_bttn.click()
+    }
+
+    maximizeWindow() {
+        super.maximize()
     }
 }
 

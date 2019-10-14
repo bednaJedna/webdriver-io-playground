@@ -6,6 +6,7 @@ describe('Homepage tests', () => {
 
     before(function () {
         HomePage.open()
+        HomePage.maximize()
         HomePage.switch_to_cookie_frame()
         HomePage.accept_cookies()
         HomePage.switch_back_from_iframe()
