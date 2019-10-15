@@ -36,7 +36,7 @@ describe('Homepage tests', () => {
         })).to.be.true
     })
 
-    it('hero banner explore bttn click CTA is tracked', () => {
+    it('datalayer has matrixId=22 activity', () => {
         HomePage.click_explore_bttn()
         expect(DataLayer.check_activity_for_presence('22')).to.be.true
     })
