@@ -1,15 +1,21 @@
 var expect = require('chai').expect
 var HomePage = require('../pageobjects/home.page.mjs')
 var DataLayer = require('../dataobjects/datalayer.mjs')
+var Network = require('../dataobjects/network.mjs')
 
 describe('Homepage tests', () => {
 
     before(function () {
+        Network.enable()
         HomePage.open()
         HomePage.maximize()
         HomePage.switch_to_cookie_frame()
         HomePage.accept_cookies()
         HomePage.switch_back_from_iframe()
+    })
+
+    it('should listen on network events', () => {
+        Network.log_responses_received()
     })
 
     it('datalayer is present', () => {
