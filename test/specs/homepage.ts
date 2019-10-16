@@ -1,7 +1,7 @@
 var expect = require('chai').expect
-var HomePage = require('../pageobjects/home.page.mjs')
-var DataLayer = require('../dataobjects/datalayer.mjs')
-var Network = require('../dataobjects/network.mjs')
+var HomePage = require('../pageobjects/home.page.js')
+var DataLayer = require('../dataobjects/datalayer.js')
+var Network = require('../dataobjects/network.js')
 
 describe('Homepage tests', () => {
 

@@ -1,4 +1,4 @@
-var Page = require('../pageobjects/page.mjs').default
+var Page = require('../pageobjects/page.js').default
 
 class HomePage extends Page {
 
